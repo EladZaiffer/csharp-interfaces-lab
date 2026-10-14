@@ -1,0 +1,153 @@
+{
+  "version": "2.0",
+  "owner": "manage-learning-production",
+  "source": {
+    "video_title": "סרטון הממשקים עם הילד, סופרמן ובטמן",
+    "transcript_title": "interfaces-final-he",
+    "basis": "verified transcript and selected code frames; video source remains unchanged"
+  },
+  "files": [
+    {
+      "id": "FAMILIES",
+      "path": "InterfacesVideo/Families.cs",
+      "owner": "create-learning-materials",
+      "version": "2.0",
+      "sha256": "4a8cd0579b4b7c9a5acf199e9cc631d7852965065b45d1374c6a661b46dc9347",
+      "status": "reviewed_not_compiled",
+      "depends_on": [],
+      "affects": []
+    },
+    {
+      "id": "INTERFACES",
+      "path": "InterfacesVideo/Interfaces.cs",
+      "owner": "create-learning-materials",
+      "version": "2.0",
+      "sha256": "8a7c303b1985c7bc975aee95cb0e3a0f78d3b55ad4e46213ccb7177ebaeb7b7e",
+      "status": "reviewed_not_compiled",
+      "depends_on": [],
+      "affects": []
+    },
+    {
+      "id": "PROJECT",
+      "path": "InterfacesVideo/InterfacesVideo.csproj",
+      "owner": "create-learning-materials",
+      "version": "2.0",
+      "sha256": "c7951c7c57e5c1fba83a55f8eaa6de6047ac909ed02a09786d6ebb621e1ca3e2",
+      "status": "reviewed_not_compiled",
+      "depends_on": [],
+      "affects": []
+    },
+    {
+      "id": "PROGRAM",
+      "path": "InterfacesVideo/Program.cs",
+      "owner": "create-learning-materials",
+      "version": "2.0",
+      "sha256": "f52ebd7219e29277dca540d2c430a6747432f055808bdf1f93c72fb082076b19",
+      "status": "reviewed_not_compiled",
+      "depends_on": [
+        "INTERFACES",
+        "VIDEO_CLASSES",
+        "QUESTIONS"
+      ],
+      "affects": []
+    },
+    {
+      "id": "QUESTIONS",
+      "path": "InterfacesVideo/Questions.cs",
+      "owner": "create-learning-materials",
+      "version": "2.0",
+      "sha256": "899d3556bd952beb01d4d29e5365fa8f18af6d9d7cf324f7c8139eaf2c4fd6cd",
+      "status": "reviewed_not_compiled",
+      "depends_on": [
+        "INTERFACES",
+        "FAMILIES"
+      ],
+      "affects": []
+    },
+    {
+      "id": "VIDEO_CLASSES",
+      "path": "InterfacesVideo/VideoClasses.cs",
+      "owner": "create-learning-materials",
+      "version": "2.0",
+      "sha256": "fe7f284777f7028ae7d3143f017050f933613dc7f2e4a847351c1e0c7fb22972",
+      "status": "reviewed_not_compiled",
+      "depends_on": [
+        "INTERFACES",
+        "FAMILIES"
+      ],
+      "affects": []
+    },
+    {
+      "id": "SOLUTION",
+      "path": "InterfacesVideo.sln",
+      "owner": "create-learning-materials",
+      "version": "2.0",
+      "sha256": "b7be0bc6c88ea3f9f1b13ed75649444b9ca7cf6e0a949fb26ab9288a1cfb05d7",
+      "status": "reviewed_not_compiled",
+      "depends_on": [],
+      "affects": []
+    },
+    {
+      "id": "GUIDE",
+      "path": "README.md",
+      "owner": "create-learning-materials",
+      "version": "2.0",
+      "sha256": "2f9832c6a2cdd3150316fa2331320ef1fa135eb12c9c9aae0b43b1bb47128ea9",
+      "status": "checked",
+      "depends_on": [],
+      "affects": []
+    },
+    {
+      "id": "INSTRUCTIONS_PDF",
+      "path": "InterfacesVideo/Instructions/Drone-Questions.pdf",
+      "owner": "create-learning-materials",
+      "version": "2.0",
+      "sha256": "de1fde0405a512b73f312e5f88be3713bceae289159b9e9e6c2ae905231633aa",
+      "status": "checked 3/3 rendered pages",
+      "depends_on": [
+        "QUESTIONS"
+      ],
+      "affects": []
+    },
+    {
+      "id": "GITIGNORE",
+      "path": ".gitignore",
+      "owner": "manage-learning-production",
+      "version": "2.0",
+      "sha256": "6acb6da077af087eb3fc06ad5ed42567260c7b0242ed04e25df99f8ccbf2367c",
+      "status": "checked",
+      "depends_on": [],
+      "affects": []
+    }
+  ],
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "path": "InterfacesVideo/Questions.cs",
+      "owner": "create-learning-materials",
+      "scope": "Drone implementation; empty starter"
+    },
+    {
+      "id": "TASK-02",
+      "path": "InterfacesVideo/Questions.cs",
+      "owner": "create-learning-materials",
+      "scope": "one Drone instance in two interface arrays; reuse general actions"
+    },
+    {
+      "id": "TASK-03",
+      "path": "InterfacesVideo/Questions.cs",
+      "owner": "create-learning-materials",
+      "scope": "student expands IChargeable contract and updates all implementations; distinct battery thresholds"
+    }
+  ],
+  "checks": {
+    "source_and_pedagogical_review": "pass; all three tasks reviewed by production manager",
+    "structure": "pass; one project/Main, three block-comment tasks and empty Drone",
+    "compile": "not_checked; dotnet unavailable",
+    "execution": "not_checked; dotnet unavailable",
+    "instructions_export": "pass; three pages visually reviewed; source comments and PDF synchronized",
+    "github_public_repository": "created public: https://github.com/stma1one/csharp-interfaces-lab"
+  },
+  "inventory_note": "This registry and the ZIP container are excluded from their own hash inventory.",
+  "repository_url": "https://github.com/stma1one/csharp-interfaces-lab"
+}
