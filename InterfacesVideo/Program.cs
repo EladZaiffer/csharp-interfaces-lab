@@ -6,32 +6,45 @@ public class Program
     {
         // משימה 2: צרו כאן את אובייקט ה-Drone לאחר מימוש המחלקה.
 
+        Drone mydrone = new Drone("Dji", 0);
         IFlyable[] flyers =
         {
             new Bird(),
             new Airplane(),
-            new Superman()
-            // משימה 2: הוסיפו גם את ההפניה לרחפן שיצרתם.
+            new Superman(),
+            (IFlyable)mydrone
         };
+        // משימה 2: הוסיפו גם את ההפניה לרחפן שיצרתם.
+
 
         IChargeable[] devices =
         {
             new ElectricCar(),
             new Phone(),
-            new RobotVacuum()
+            new RobotVacuum(),
+            (IChargeable)mydrone
             // משימה 2: הוסיפו את ההפניה לאותו רחפן.
         };
 
         // טוענים תחילה, כדי שכלי שדורש טעינה יוכל לעוף בהמשך.
         // משימה 3: הדפיסו כאן מצבי סוללה דרך devices לפני הטעינה.
+        Console.WriteLine("Battry status before charging:");
+        foreach (IChargeable device in devices)
+        {
+            Console.WriteLine(device.ChargingStatus());
+        }
         Console.WriteLine("--- Charge through IChargeable[] ---");
         ChargeAll(devices);
         // משימה 3: הדפיסו שוב מצבי סוללה דרך devices לאחר הטעינה.
-
+        Console.WriteLine("Battery status after charging:");
+        foreach (IChargeable device in devices)
+        {
+            Console.WriteLine(device.ChargingStatus());
+        }
         Console.WriteLine("--- Fly through IFlyable[] ---");
         FlyAll(flyers);
         // משימה 2: הדפיסו כאן את אחוז הסוללה של הרחפן לאחר הטיסה.
-
+        Console.WriteLine("Drone battery status after flying: " + mydrone.ChargingStatus());
         object[] items =
         {
             new Phone(),

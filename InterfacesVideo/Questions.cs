@@ -27,8 +27,49 @@ Drone הוא כלי תחבורה המסוגל לעוף. כדי להפעיל או
 מחזירות ערך. ההודעות ואחוז הסוללה מאפשרים לעקוב אחר הפעולות.
 */
 
-public class Drone
+using System;
+public class Drone: Vehicle, IFlyable, IChargeable
 {
+    public string ModelName { get; set; }
+    public int BatteryLevel { get; set; }
+
+    public Drone(string modelName, int batteryLevel)
+    {
+        ModelName = modelName;
+        BatteryLevel = batteryLevel;
+    }
+    public void Fly()
+    {
+        if (BatteryLevel < 10)
+        {
+            Console.WriteLine($"Drone {ModelName} cannot take off. Battery level is too low.");
+        }
+        else
+        {
+            Console.WriteLine($"Drone {ModelName} is flying.");
+            BatteryLevel -= 10;
+        }
+    }
+    public void Charge()
+    {
+        BatteryLevel = 100;
+        Console.WriteLine($"Drone {ModelName} is charging. Battery level is now {BatteryLevel}%.");
+    }
+    public string ChargingStatus()
+    {
+        if (BatteryLevel < 10)
+        {
+            return "Empty";
+        }
+        else if (BatteryLevel < 30)
+        {
+            return "Low";
+        }
+        else
+        {
+            return "Ready";
+        }
+    }
 }
 
 /*
